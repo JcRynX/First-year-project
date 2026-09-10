@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>My Photos</title>
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+
+body {
+font-family: Arial, sans-serif;
+background-image: url(./images/nature.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+
+ul {
+list-style: none;
+background-color: pink;
+overflow: hidden;
+}
+
+
+li {
+float: right;
+}
+
+
+li a {
+display: block;
+padding: 16px 18px;
+color: white;
+text-decoration: none;
+font-size: 18px;
+}
+
+li a:hover {
+background-color: blue;
+}
+
+
+h2 {
+padding: 14px;
+color: white;
+}
+
+
+h1 {
+text-align: center;
+margin: 25px 0;
+font-family: 'Times New Roman', Times, serif;
+color: white;
+}
+
+
+h1:hover {
+color: blue;
+}
+
+p{
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  color: white;
+
+}
+
+.slider {
+position: relative;
+width: 450px;
+margin: auto;
+}
+
+
+.slider img {
+width: 100%;
+height: 380px;
+object-fit: cover;
+border-radius: 20px;
+display: none;
+transition: opacity 0.8s ease-in-out; 
+}
+
+.slider img.active {
+display: block;
+}
+
+
+
+.arrow {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 10px 14px;
+font-size: 20px;
+cursor: pointer;
+border-radius: 50%;
+}
+
+
+.arrow:hover {
+background-color: black;
+}
+
+
+.prev {
+left: -45px;
+}
+
+.next {
+right: -45px;
+}
+</style>
+</head>
+
+
+<body>
+
+
+
+<ul>
+<li><a href="Main.html">Home</a></li>
+<li><a href="About me.html">About Me</a></li>
+<li><a href="My information.html">Information</a></li>
+<li><a href="My Photos.html">Photos</a></li>
+<li><a href="My work.html">My Work</a></li>
+<h2>Jc Ryan Arcenas BSCS-1</h2>
+</ul>
+
+
+<h1>PHOTOS</h1>
+
+
+<div class="slider">
+<button class="arrow prev" onclick="prevImage()">❮</button>
+
+
+<img src="./images/jc.jpg" class="active" />
+<img src="./images/jc2.jpg" />
+<img src="./images/jc3.jpg" />
+<img src="./images/jc4.jpg" />
+<img src="./images/jc5.jpg" />
+<img src="./images/jc6.jpg" />
+<img src="./images/jc7.jpg" />
+<img src="./images/jc8.jpg" />
+<img src="./images/jc9.jpg" />
+<img src="./images/jc10.jpg" />
+<img src="./images/jc11.jpg" />
+<img src="./images/jc12.png" />
+<img src="./images/jc13.jpg" />
+<img src="./images/jc14.jpg" />
+<img src="./images/jc15jpg.jpg" />
+<img src="./images/jc16.jpg" />
+<img src="./images/jc17.jpg" />
+<img src="./images/jc18.jpg" />
+<img src="./images/jc19.jpg" />
+<img src="./images/jc20.jpg" />
+<img src="./images/jc21.jpg" />
+<img src="./images/jc22.jpg" />
+<img src="./images/jc23.jpg" />
+<img src="./images/jc24.jpg" />
+<img src="./images/jc25.jpg" />
+<img src="./images/jc26.jpg" />
+<img src="./images/jc27.jpg" />
+<img src="./images/jc28.jpg" />
+<img src="./images/jc29.jpg" />
+<img src="./images/jc30.jpg" />
+<img src="./images/jc31.jpg" />
+<img src="./images/jc32.jpg" />
+<img src="./images/jc33.jpg" />
+<img src="./images/jc34.jpg" />
+<img src="./images/jc35.jpg" />
+<img src="./images/jc36.jpg" />
+<img src="./images/jc37.jpg" />
+<img src="./images/jc38.jpg" />
+<img src="./images/jc39.jpg" />
+<img src="./images/jc40.jpg" />
+<button class="arrow next" onclick="nextImage()">❯</button>
+</div>
+
+<br>
+<br>
+<br>
+
+<p>Display above is the different pictue of me and my friends. The photos tells my story it may not as beautiful as others </p>
+<p>but i am grateful to the People who comes in my life</p>
+
+<script>
+const images = document.querySelectorAll('.slider img');
+let currentIndex = 0;
+
+
+function showImage(index) {
+images.forEach((img, i) => {
+img.classList.remove('active');
+if (i === index) {
+img.classList.add('active');
+}
+});
+}
+
+
+function nextImage() {
+currentIndex++;
+if (currentIndex >= images.length) {
+currentIndex = 0;
+}
+showImage(currentIndex);
+}
+
+
+function prevImage() {
+currentIndex--;
+if (currentIndex < 0) {
+currentIndex = images.length - 1;
+}
+showImage(currentIndex);
+}
+</script>
+
+
+</body>
+</html>

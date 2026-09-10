@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Information</title>
+
+
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+font-family: Arial, sans-serif;
+background-image: url(./images/nature.jpg);
+background-size: cover;
+background-attachment: fixed;
+color: white;
+}
+
+
+
+ul {
+list-style: none;
+background-color: rgba(255, 192, 203, 0.9);
+overflow: hidden;
+}
+
+
+li {
+float: right;
+}
+
+li a {
+display: block;
+padding: 16px 18px;
+color: white;
+text-decoration: none;
+font-size: 18px;
+}
+
+
+li a:hover {
+background-color: blue;
+}
+
+
+h2 {
+padding: 14px;
+}
+
+
+
+.container {
+max-width: 900px;
+margin: 50px auto;
+padding: 30px;
+background: rgba(0, 0, 0, 0.6);
+border-radius: 25px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+
+h1 {
+margin-bottom: 20px;
+font-size: 36px;
+}
+
+
+h1:hover {
+color: skyblue;
+}
+
+
+
+.avatar {
+width: 220px;
+height: 220px;
+border-radius: 50%;
+object-fit: cover;
+margin: 20px auto;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+
+
+h1 {
+margin-bottom: 20px;
+font-size: 36px;
+}
+
+
+h1:hover {
+color: skyblue;
+}
+
+
+
+.avatar {
+width: 220px;
+height: 220px;
+border-radius: 50%;
+object-fit: cover;
+margin: 20px auto;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+transform: scale(1.08);
+}
+
+
+
+.icons {
+display: flex;
+justify-content: center;
+gap: 40px;
+margin-top: 30px;
+}
+
+
+.icons img {
+width: 90px;
+cursor: pointer;
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.icons img:hover {
+transform: scale(1.2);
+filter: brightness(1.2);
+}
+
+.tooltip {
+margin-top: 20px;
+font-size: 20px;
+display: none;
+}
+
+
+.fade {
+animation: fadeIn 0.6s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+</style>
+</head>
+
+
+<body>
+
+
+
+<ul>
+<li><a href="Main.html">Home</a></li>
+<li><a href="About me.html">About Me</a></li>
+<li><a href="My Information.html">Information</a></li>
+<li><a href="My Photos.html">Photos</a></li>
+<li><a href="My work.html">My Work</a></li>
+<h2>Jc Ryan Arcenas BSCS-1</h2>
+</ul>
+
+<div class="container">
+<h1>TO KNOW MORE ABOUT ME</h1>
+<p>Click the icons below 👇</p>
+
+
+<img src="./Images/man with glasses.png" class="avatar" onclick="showMessage()">
+
+
+<div class="icons">
+<a href="https://www.facebook.com/share/1DPpqpz1sf/" target="_blank">
+<img src="./images/facebook_logos_PNG19757-removebg-preview.png" onclick="showPlatform('Facebook')">
+</a>
+<a href="https://www.instagram.com/jclangposaumaga?igsh=MWt6ZGw0Nm11dXQ4Zw==" target="_blank">
+<img src="./images/IG.png" onclick="showPlatform('Instagram')">
+</a>
+<a href="https://t.me/Ryan_Alp1" target="_blank">
+<img src="./images/tG.png" onclick="showPlatform('Telegram')">
+</a>
+<a href="https://www.tiktok.com/@bigboss_694?_r=1&_t=ZS-92Hoze5DwWt" target="_blank">
+  <img src="./images/tiktok.png" onclick="showPlatform(Tiktok)">
+</a>
+</div>
+
+
+<div id="tooltip" class="tooltip"></div>
+</div>
+
+
+
+<script>
+function showPlatform(name) {
+const tooltip = document.getElementById('tooltip');
+tooltip.innerHTML = 'Opening my ' + name + ' profile...';
+tooltip.style.display = 'block';
+tooltip.classList.add('fade');
+}
+
+
+function showMessage() {
+alert('Hello! You can connect with me using the icons below 😊');
+}
+</script>
+
+
+</body>
+</html>

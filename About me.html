@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>About Me</title>
+
+
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+font-family: 'Times New Roman', Times, serif;
+background-image: url(./images/nature.jpg);
+background-size: cover;
+background-attachment: fixed;
+color: white;
+}
+
+
+
+ul {
+list-style: none;
+background-color: rgba(255, 192, 203, 0.9);
+overflow: hidden;
+}
+
+
+li {
+float: right;
+}
+li a {
+display: block;
+padding: 16px 18px;
+color: white;
+text-decoration: none;
+font-size: 18px;
+}
+
+
+li a:hover {
+background-color: blue;
+}
+
+
+h2 {
+padding: 14px;
+}
+
+
+
+.container {
+max-width: 900px;
+margin: 40px auto;
+background: rgba(0, 0, 0, 0.55);
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+.profile-img {
+display: block;
+margin: auto;
+width: 260px;
+height: 340px;
+object-fit: cover;
+border-radius: 30px;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+transform: scale(1.05);
+}
+
+
+h1 {
+text-align: center;
+margin: 20px 0;
+font-size: 48px;
+}
+
+
+h1:hover {
+color: skyblue;
+}
+
+
+.about-text {
+font-size: 20px;
+line-height: 1.6;
+text-align: justify;
+margin-top: 20px;
+display: none;
+}
+
+.btn {
+display: block;
+margin: 25px auto 0;
+padding: 12px 25px;
+font-size: 18px;
+background-color: pink;
+color: white;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+
+.btn:hover {
+background-color: blue;
+}
+
+
+.fade {
+animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(15px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+</style>
+</head>
+
+
+<body>
+
+
+<ul>
+<li><a href="Main.html">Home</a></li>
+<li><a href="About me.html">About Me</a></li>
+<li><a href="My information.html">Information</a></li>
+<li><a href="My Photos.html">Photos</a></li>
+<li><a href="My work.html">My Work</a></li>
+<h2>Jc Ryan Arcenas BSCS-1</h2>
+</ul>
+
+
+<div class="container">
+<img src="./images/jc.jpg" class="profile-img" onclick="toggleInfo()" />
+
+
+<h1>ABOUT ME</h1>
+
+
+<p id="about" class="about-text">
+Jc Ryan Arcenas is a 20 years old BSCS student. He is the third child of Josefino Arcenas and Rosa Arcenas.
+He has a brother named Jay-ar Arcenas and a sister Jullan Rose Arcenas.
+<br><br>
+He is a resident of Cosme 1 Santol Street, Admiral Village, Talon Tres, Las Piñas City.
+He finished his primary and elementary education at Talon Tres Elementary School.
+He graduated high school at Las Piñas City Technical-Vocational High School.
+<br><br>
+For Senior High School, he continued his studies at Saint Francis of Assisi College – Las Piñas Campus
+and took the ICT strand. Though he had second doubts, he pursued ICT due to his strong interest in computers.
+<br><br>
+He is a member of the Boy Scouts of the Philippines. He is now a first-year college student
+taking Bachelor of Science in Computer Studies. The road ahead is long and not easy,
+but he is determined to keep striving to achieve his dreams.
+</p>
+
+
+<button class="btn" onclick="toggleInfo()">Show / Hide Story</button>
+</div>
+
+
+<script>
+function toggleInfo() {
+const about = document.getElementById('about');
+
+
+if (about.style.display === 'none' || about.style.display === '') {
+about.style.display = 'block';
+about.classList.add('fade');
+} else {
+about.style.display = 'none';
+}
+}
+</script>
+
+
+</body>
+</html>
